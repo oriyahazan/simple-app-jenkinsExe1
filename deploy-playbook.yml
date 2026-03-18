@@ -1,0 +1,11 @@
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Pull Docker image
+      docker_container:
+        name: my-app
+        image: oriyahazan/simple-app:1.0
+        state: started
+        ports:
+          - "3000:3000"
